@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: demo
+  ai:
+#    openai:
+#      api-key: ${OPENAI_API_KEY}
+
+      gemini:
+        api-key: ${GEMINI_API_KEY}
+
+server:
+  port: 9090
