@@ -33,6 +33,8 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     testAnnotationProcessor 'org.projectlombok:lombok'
+    // Spring Boot starter provides the auto-configuration that creates the GoogleGenAiChatModel bean
+    implementation 'org.springframework.ai:spring-ai-starter-model-google-genai'
 }
 
 dependencyManagement {

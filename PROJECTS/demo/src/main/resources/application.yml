@@ -2,11 +2,20 @@ spring:
   application:
     name: demo
   ai:
-#    openai:
-#      api-key: ${OPENAI_API_KEY}
-
-      gemini:
+    chat:
+      client:
+        enabled: false
+    openai:
+      api-key: ${OPENAI_API_KEY}
+    google:
+      genai:
         api-key: ${GEMINI_API_KEY}
+        chat:
+          options:
+            model: gemini-2.0-flash
+
 
 server:
   port: 9090
+  
+

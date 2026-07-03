@@ -1,22 +1,22 @@
-package com.example.demo.Service;
+// package com.example.demo.Service;
 
-import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.stereotype.Service;
+// import org.springframework.ai.chat.client.ChatClient;
+// import org.springframework.stereotype.Service;
 
-@Service
-public class ChatService {
+// @Service
+// public class ChatService {
 
-    private final ChatClient chatClient;
+//     private final ChatClient chatClient;
 
-    public ChatService(ChatClient.Builder chatClientBuilder) {
-        this.chatClient = chatClientBuilder.build();
-    }
+//     public ChatService(ChatClient.Builder chatClientBuilder) {
+//         this.chatClient = chatClientBuilder.build();
+//     }
 
-    public String chat(String message){
-        return chatClient.prompt(message).call().content();
-    }
-
-
+//     public String chat(String message){
+//         return chatClient.prompt(message).call().content();
+//     }
 
 
-}
+
+
+// }
