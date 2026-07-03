@@ -12,21 +12,24 @@ import com.example.demo.Service.MultipleLLMChatService;
 @RequestMapping("/api/multiple-llm-chat")
 public class MultipleLLMChatController {
 
-   private final ChatClient openAIChatClient;
-   private final ChatClient geminiChatClient;
+   private final MultipleLLMChatService multipleLLMChatService;
 
-    public MultipleLLMChatController(ChatClient openAIChatClient, ChatClient geminiChatClient) {
-        this.openAIChatClient = openAIChatClient;
-        this.geminiChatClient = geminiChatClient;
+    public MultipleLLMChatController(MultipleLLMChatService multipleLLMChatService) {
+        this.multipleLLMChatService = multipleLLMChatService;
+    }
+
+    @GetMapping
+    public String chat(@RequestParam String message) {
+        return multipleLLMChatService.chat(message);
     }
 
     @GetMapping("/chat/openai")
     public String chatOpenAI(@RequestParam String message) {
-        return openAIChatClient.prompt(message).call().content();
+        return multipleLLMChatService.chatOpenAI(message);
     }
 
     @GetMapping("/chat/gemini")
     public String chatGemini(@RequestParam String message) {
-        return geminiChatClient.prompt(message).call().content();
+        return multipleLLMChatService.chatGemini(message);
     }
 }

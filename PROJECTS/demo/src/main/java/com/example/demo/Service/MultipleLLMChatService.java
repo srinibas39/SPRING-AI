@@ -25,4 +25,10 @@ public class MultipleLLMChatService {
         return geminiChatClient.prompt(message).call().content();
     }
 
+    public String chat(String message) {
+        return openAIChatClient.prompt()
+                .user("Customer says: "+message)
+                .call().content();
+    }
+
 }

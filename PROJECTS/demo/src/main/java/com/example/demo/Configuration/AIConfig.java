@@ -11,7 +11,13 @@ public class AIConfig {
 
     @Bean("openAIChatClient")
     public ChatClient openAIChatClient(OpenAiChatModel openAiChatModel) {
-        return ChatClient.builder(openAiChatModel).build();
+        return ChatClient.builder(openAiChatModel)
+                .defaultSystem("""
+                        You are an insurance agent.
+                        You are only job is to give answer to queries of clients about insurance.
+                        If the query is not about insurance, you will respond with "I don't know".
+                        """)
+                .build();
     }
 
     @Bean("geminiChatClient")
